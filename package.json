@@ -1,6 +1,6 @@
 {
-  "name": "@tisoap/react-flow-smart-edge",
-  "version": "3.0.0",
+  "name": "@kinsalvan/react-flow-smart-edge",
+  "version": "4.0.0",
   "keywords": [
     "react",
     "typescript",
@@ -12,13 +12,13 @@
     "pathfinding",
     "react-flow-smart-edge"
   ],
-  "homepage": "https://tisoap.github.io/react-flow-smart-edge/",
+  "homepage": "https://kinsalvan.github.io/react-flow-smart-edge/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tisoap/react-flow-smart-edge.git"
+    "url": "https://github.com/kinsalvan/react-flow-smart-edge.git"
   },
   "license": "MIT",
-  "author": "Tiso Alvarez Puccinelli",
+  "author": "Donavan David Rahilly",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/react-flow-smart-edge.esm.js",
