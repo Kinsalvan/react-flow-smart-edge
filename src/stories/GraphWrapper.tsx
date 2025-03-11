@@ -1,15 +1,15 @@
-import React from 'react'
-import { ReactFlow } from 'reactflow'
-import type { ReactFlowProps } from 'reactflow'
+import React from 'react';
+import { ReactFlow } from '@xyflow/react';
+import type { ReactFlowProps } from '@xyflow/react';
 
 const style = {
-	background: '#fafafa',
-	width: '100%',
-	height: '500px'
-}
+  background: '#fafafa',
+  width: '100%',
+  height: '500px',
+};
 
 export const GraphWrapper = (args: ReactFlowProps) => (
-	<div style={style}>
-		<ReactFlow {...args} />
-	</div>
-)
+  <div style={style}>
+    <ReactFlow {...args} />
+  </div>
+);

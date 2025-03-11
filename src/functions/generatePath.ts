@@ -5,14 +5,9 @@
 	@typescript-eslint/no-unsafe-assignment,
 	@typescript-eslint/ban-ts-comment,
 */
-import {
-	AStarFinder,
-	JumpPointFinder,
-	Util,
-	DiagonalMovement
-} from 'pathfinding'
-import type { Grid } from 'pathfinding'
-import type { XYPosition } from 'reactflow'
+import type { XYPosition } from '@xyflow/react';
+import { AStarFinder, DiagonalMovement, JumpPointFinder, Util } from 'pathfinding';
+import type { Grid } from 'pathfinding';
 
 /**
  * Takes source and target {x, y} points, together with an grid representation
@@ -21,66 +16,54 @@ import type { XYPosition } from 'reactflow'
  * represents a condensed path from source to target.
  */
 export type PathFindingFunction = (
-	grid: Grid,
-	start: XYPosition,
-	end: XYPosition
+  grid: Grid,
+  start: XYPosition,
+  end: XYPosition
 ) => {
-	fullPath: number[][]
-	smoothedPath: number[][]
-} | null
+  fullPath: number[][];
+  smoothedPath: number[][];
+} | null;
 
-export const pathfindingAStarDiagonal: PathFindingFunction = (
-	grid,
-	start,
-	end
-) => {
-	try {
-		const finder = new AStarFinder({
-			diagonalMovement: DiagonalMovement.Always
-		})
-		const fullPath = finder.findPath(start.x, start.y, end.x, end.y, grid)
-		const smoothedPath = Util.smoothenPath(grid, fullPath)
-		if (fullPath.length === 0 || smoothedPath.length === 0) return null
-		return { fullPath, smoothedPath }
-	} catch {
-		return null
-	}
-}
+export const pathfindingAStarDiagonal: PathFindingFunction = (grid, start, end) => {
+  try {
+    const finder = new AStarFinder({
+      diagonalMovement: DiagonalMovement.Always,
+    });
+    const fullPath = finder.findPath(start.x, start.y, end.x, end.y, grid);
+    const smoothedPath = Util.smoothenPath(grid, fullPath);
+    if (fullPath.length === 0 || smoothedPath.length === 0) return null;
+    return { fullPath, smoothedPath };
+  } catch {
+    return null;
+  }
+};
 
-export const pathfindingAStarNoDiagonal: PathFindingFunction = (
-	grid,
-	start,
-	end
-) => {
-	try {
-		const finder = new AStarFinder({
-			diagonalMovement: DiagonalMovement.Never
-		})
-		const fullPath = finder.findPath(start.x, start.y, end.x, end.y, grid)
-		const smoothedPath = Util.smoothenPath(grid, fullPath)
-		if (fullPath.length === 0 || smoothedPath.length === 0) return null
-		return { fullPath, smoothedPath }
-	} catch {
-		return null
-	}
-}
+export const pathfindingAStarNoDiagonal: PathFindingFunction = (grid, start, end) => {
+  try {
+    const finder = new AStarFinder({
+      diagonalMovement: DiagonalMovement.Never,
+    });
+    const fullPath = finder.findPath(start.x, start.y, end.x, end.y, grid);
+    const smoothedPath = Util.smoothenPath(grid, fullPath);
+    if (fullPath.length === 0 || smoothedPath.length === 0) return null;
+    return { fullPath, smoothedPath };
+  } catch {
+    return null;
+  }
+};
 
-export const pathfindingJumpPointNoDiagonal: PathFindingFunction = (
-	grid,
-	start,
-	end
-) => {
-	try {
-		// FIXME: The "pathfinding" module doe not have proper typings.
-		// @ts-ignore
-		const finder = new JumpPointFinder({
-			diagonalMovement: DiagonalMovement.Never
-		})
-		const fullPath = finder.findPath(start.x, start.y, end.x, end.y, grid)
-		const smoothedPath = fullPath
-		if (fullPath.length === 0 || smoothedPath.length === 0) return null
-		return { fullPath, smoothedPath }
-	} catch {
-		return null
-	}
-}
+export const pathfindingJumpPointNoDiagonal: PathFindingFunction = (grid, start, end) => {
+  try {
+    // FIXME: The "pathfinding" module doe not have proper typings.
+    // @ts-ignore
+    const finder = new JumpPointFinder({
+      diagonalMovement: DiagonalMovement.Never,
+    });
+    const fullPath = finder.findPath(start.x, start.y, end.x, end.y, grid);
+    const smoothedPath = fullPath;
+    if (fullPath.length === 0 || smoothedPath.length === 0) return null;
+    return { fullPath, smoothedPath };
+  } catch {
+    return null;
+  }
+};

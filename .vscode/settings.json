@@ -2,7 +2,7 @@
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.formatOnSave": true,
 	"editor.codeActionsOnSave": {
-		"source.fixAll.eslint": true
+		"source.fixAll.eslint": "explicit"
 	},
 	"[html]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -10,20 +10,5 @@
 	"[json]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"cSpell.words": [
-		"bahmutov",
-		"bezier",
-		"chromaui",
-		"drawedge",
-		"flowtype",
-		"generatepath",
-		"github",
-		"predeploy",
-		"reactflow",
-		"shopify",
-		"sonarjs",
-		"tisoap",
-		"tsdx",
-		"wontfix"
-	]
+	"prettier.configPath": ".prettierrc.mjs"
 }

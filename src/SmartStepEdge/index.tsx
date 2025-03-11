@@ -1,29 +1,22 @@
-import React from 'react'
-import { useNodes, StepEdge } from 'reactflow'
-import { SmartEdge } from '../SmartEdge'
-import {
-	svgDrawStraightLinePath,
-	pathfindingJumpPointNoDiagonal
-} from '../functions'
-import type { SmartEdgeOptions } from '../SmartEdge'
-import type { EdgeProps } from 'reactflow'
+import React from 'react';
+import { StepEdge, useNodes } from '@xyflow/react';
+import type { Edge, EdgeProps, Node } from '@xyflow/react';
+import { pathfindingJumpPointNoDiagonal, svgDrawStraightLinePath } from '../functions';
+import { SmartEdge } from '../SmartEdge';
+import type { EdgeElement, SmartEdgeOptions } from '../SmartEdge';
 
 const StepConfiguration: SmartEdgeOptions = {
-	drawEdge: svgDrawStraightLinePath,
-	generatePath: pathfindingJumpPointNoDiagonal,
-	fallback: StepEdge
-}
+  drawEdge: svgDrawStraightLinePath,
+  generatePath: pathfindingJumpPointNoDiagonal,
+  fallback: StepEdge as EdgeElement,
+};
 
-export function SmartStepEdge<EdgeDataType = unknown, NodeDataType = unknown>(
-	props: EdgeProps<EdgeDataType>
+export function SmartStepEdge<EdgeDataType extends Edge = Edge, NodeDataType extends Node = Node>(
+  props: EdgeProps<EdgeDataType>
 ) {
-	const nodes = useNodes<NodeDataType>()
+  const nodes = useNodes<Node<NodeDataType>>();
 
-	return (
-		<SmartEdge<EdgeDataType, NodeDataType>
-			{...props}
-			options={StepConfiguration}
-			nodes={nodes}
-		/>
-	)
+  return (
+    <SmartEdge<EdgeDataType, NodeDataType> {...props} options={StepConfiguration} nodes={nodes} />
+  );
 }
