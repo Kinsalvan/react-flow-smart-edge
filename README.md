@@ -25,7 +25,7 @@ yarn add @kinsalvan/react-flow-smart-edge
 ```
 
 This package is only compatible with [**version 12 or newer** of React Flow](https://reactflow.dev/docs/guides/migrate-to-v12/).
-Please use original authors version if ReactFlow version is still 11 and below [here](https://github.com/tisoap/react-flow-smart-edge/blob/main/src/stories/SmartEdge.stories.tsx)
+Please use original authors version if ReactFlow version is still 11 and below [here](https://github.com/tisoap/react-flow-smart-edge)
 
 ## Support
 
