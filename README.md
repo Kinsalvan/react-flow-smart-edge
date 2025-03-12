@@ -3,9 +3,6 @@
 Custom Edges for React Flow that never intersect with other nodes, using pathfinding.
 
 ![CI](https://img.shields.io/badge/CI-intermittent-gray?logo=Github&color=orange)
-
-<!-- ![Code Quality](https://github.com/kinsalvan/react-flow-smart-edge/actions/workflows/codeql-analysis.yml/badge.svg?branch=main) -->
-
 ![TypeScript](https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=white)
 ![Storybook](https://img.shields.io/badge/Storybook-FF4785?logo=storybook&logoColor=white)
 ![Testing Library](https://img.shields.io/badge/Testing_Library-DC3130?logo=testinglibrary&logoColor=white)
