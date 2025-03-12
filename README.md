@@ -2,8 +2,10 @@
 
 Custom Edges for React Flow that never intersect with other nodes, using pathfinding.
 
-![CI](https://github.com/kinsalvan/react-flow-smart-edge/actions/workflows/main.yml/badge.svg?branch=main)
-![Code Quality](https://github.com/kinsalvan/react-flow-smart-edge/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)
+![CI](https://img.shields.io/badge/CI-intermittent-gray?logo=Github&color=orange)
+
+<!-- ![Code Quality](https://github.com/kinsalvan/react-flow-smart-edge/actions/workflows/codeql-analysis.yml/badge.svg?branch=main) -->
+
 ![TypeScript](https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=white)
 ![Storybook](https://img.shields.io/badge/Storybook-FF4785?logo=storybook&logoColor=white)
 ![Testing Library](https://img.shields.io/badge/Testing_Library-DC3130?logo=testinglibrary&logoColor=white)
@@ -26,6 +28,7 @@ yarn add @kinsalvan/react-flow-smart-edge
 ```
 
 This package is only compatible with [**version 12 or newer** of React Flow](https://reactflow.dev/docs/guides/migrate-to-v12/).
+Please use original authors version if ReactFlow version is still 11 and below [here](https://github.com/tisoap/react-flow-smart-edge/blob/main/src/stories/SmartEdge.stories.tsx)
 
 ## Support
 
@@ -346,7 +349,7 @@ const straightResult = getSmartEdge({
 
 ## Storybook
 
-You can see live Storybook examples by visiting [this page](https://tisoap.github.io/react-flow-smart-edge/),from the original creator and see their source code [here](https://github.com/tisoap/react-flow-smart-edge/blob/main/src/stories/SmartEdge.stories.tsx).
+You can see live Storybook examples by visiting [this page](https://kinsalvan.github.io/react-flow-smart-edge/),from the original creator and see their source code [here](https://github.com/kinsalvan/react-flow-smart-edge/blob/main/src/stories/SmartEdge.stories.tsx).
 
 ## License
 
