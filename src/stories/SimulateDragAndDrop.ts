@@ -1,7 +1,7 @@
 // https://testing-library.com/docs/example-drag/
 import { fireEvent } from '@storybook/testing-library';
 
-const isElement = (obj: unknown): obj is HTMLElement => {
+const isElement = (obj: any): obj is HTMLElement => {
   if (typeof obj !== 'object') {
     return false;
   }
@@ -9,13 +9,14 @@ const isElement = (obj: unknown): obj is HTMLElement => {
   let prototypeStr: string;
   let prototype: unknown;
 
+  let currentObj = obj;
   do {
-    prototype = Object.getPrototypeOf(obj);
+    prototype = Object.getPrototypeOf(currentObj);
     prototypeStr = Object.prototype.toString.call(prototype);
     if (prototypeStr === '[object Element]' || prototypeStr === '[object Document]') {
       return true;
     }
-    obj = prototype;
+    currentObj = prototype;
   } while (prototype !== null);
 
   return false;

@@ -1,14 +1,13 @@
 import React from 'react';
-import { StraightEdge, useNodes } from '@xyflow/react';
-import type { Edge, EdgeProps, Node } from '@xyflow/react';
+import { StraightEdge, useNodes, type Edge, type EdgeProps, type Node } from '@xyflow/react';
 import { pathfindingAStarNoDiagonal, svgDrawStraightLinePath } from '../functions';
-import { SmartEdge } from '../SmartEdge';
-import type { SmartEdgeOptions } from '../SmartEdge';
+import { SmartEdge, type SmartEdgeOptions } from '../SmartEdge';
 
 const StraightConfiguration: SmartEdgeOptions = {
   drawEdge: svgDrawStraightLinePath,
   generatePath: pathfindingAStarNoDiagonal,
   fallback: StraightEdge,
+  avoidExistingPaths: true, // New option added
 };
 
 export function SmartStraightEdge<

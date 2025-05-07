@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react';
-import type { ReactFlowProps } from '@xyflow/react';
-import { EdgeTypes } from '@xyflow/react';
+import type { EdgeTypes, ReactFlowProps } from '@xyflow/react';
 import { SmartBezierEdge } from '../SmartBezierEdge';
 import { SmartStepEdge } from '../SmartStepEdge';
 import { SmartStraightEdge } from '../SmartStraightEdge';
@@ -10,10 +9,28 @@ import { edgesBezier, edgesLabel, edgesStep, edgesStraight, nodes } from './Dumm
 import { GraphWrapper } from './GraphWrapper';
 
 const edgeTypes: EdgeTypes = {
-  smartBezier: SmartBezierEdge,
-  smartStraight: SmartStraightEdge,
-  smartStep: SmartStepEdge,
-  smartBezierLabel: (props) => <SmartEdgeCustomLabel {...props} />,
+  smartBezier: (props) => (
+    <SmartBezierEdge
+      {...props}
+      data={{
+        ...props.data,
+        options: { avoidExistingPaths: true },
+        fallback: SmartBezierEdge,
+      }}
+    />
+  ),
+  smartStraight: (props) => (
+    <SmartStraightEdge {...props} data={{ ...props.data, options: { avoidExistingPaths: true } }} />
+  ),
+  smartStep: (props) => (
+    <SmartStepEdge {...props} data={{ ...props.data, options: { avoidExistingPaths: true } }} />
+  ),
+  smartBezierLabel: (props) => (
+    <SmartEdgeCustomLabel
+      {...props}
+      data={{ ...props.data, options: { avoidExistingPaths: true } }}
+    />
+  ),
 };
 
 export default {

@@ -1,6 +1,5 @@
 import React from 'react';
-import { BezierEdge, useNodes } from '@xyflow/react';
-import type { Edge, EdgeProps, Node } from '@xyflow/react';
+import { BezierEdge, useNodes, type Edge, type EdgeProps, type Node } from '@xyflow/react';
 import { getSmartEdge } from '../getSmartEdge';
 import type { EdgeData, NodeData } from './DummyData';
 
@@ -72,6 +71,7 @@ export function SmartEdgeCustomLabel(props: EdgeProps<Edge<EdgeData>>) {
           }}
         >
           <button
+            type="button"
             style={{
               width: '20px',
               height: '20px',
@@ -83,6 +83,7 @@ export function SmartEdgeCustomLabel(props: EdgeProps<Edge<EdgeData>>) {
               lineHeight: '1',
             }}
             onClick={() => {
+              // eslint-disable-next-line no-alert
               alert(`Clicked on edge with id ${id}`);
             }}
           >

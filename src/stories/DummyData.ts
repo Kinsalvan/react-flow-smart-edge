@@ -1,5 +1,4 @@
-import { MarkerType } from '@xyflow/react';
-import type { Edge, Node } from '@xyflow/react';
+import { MarkerType, type Edge, type Node } from '@xyflow/react';
 import { SmartBezierEdge, SmartStepEdge, SmartStraightEdge } from '../index';
 import { SmartEdgeCustomLabel } from './CustomLabel';
 

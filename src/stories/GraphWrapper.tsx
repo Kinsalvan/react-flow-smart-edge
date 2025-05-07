@@ -1,6 +1,5 @@
 import React from 'react';
-import { ReactFlow } from '@xyflow/react';
-import type { ReactFlowProps } from '@xyflow/react';
+import { ReactFlow, type ReactFlowProps } from '@xyflow/react';
 
 const style = {
   background: '#fafafa',

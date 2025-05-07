@@ -1,24 +1,34 @@
 import React from 'react';
-import { BaseEdge, BezierEdge } from '@xyflow/react';
-import type { Edge, EdgeProps, Node, StepEdge } from '@xyflow/react';
-import { getSmartEdge } from '../getSmartEdge';
-import type { GetSmartEdgeOptions } from '../getSmartEdge';
+import {
+  BaseEdge,
+  BezierEdge,
+  type Edge,
+  type EdgeProps,
+  type Node,
+  type StepEdge,
+} from '@xyflow/react';
+import { getSmartEdge, type GetSmartEdgeOptions } from '../getSmartEdge';
 
 export type EdgeElement = typeof BezierEdge | typeof StepEdge;
 
 export type SmartEdgeOptions = GetSmartEdgeOptions & {
   fallback?: EdgeElement;
+  avoidExistingPaths?: boolean; // New option added
 };
 
 export interface SmartEdgeProps<EdgeDataType extends Edge = Edge, NodeDataType extends Node = Node>
   extends EdgeProps<EdgeDataType> {
   nodes: Node<NodeDataType>[];
+  edges: Edge<EdgeDataType>[]; // Added to pass edges for existingPaths
   options: SmartEdgeOptions;
+  avoidExistingPaths: boolean;
 }
 
 export function SmartEdge<EdgeDataType extends Edge = Edge, NodeDataType extends Node = Node>({
   nodes,
   options,
+  avoidExistingPaths,
+  edges,
   ...edgeProps
 }: SmartEdgeProps<EdgeDataType, NodeDataType>) {
   const {
@@ -49,6 +59,7 @@ export function SmartEdge<EdgeDataType extends Edge = Edge, NodeDataType extends
     targetY,
     options,
     nodes,
+    edges,
   });
 
   const FallbackEdge = options.fallback || BezierEdge;

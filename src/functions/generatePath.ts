@@ -1,13 +1,7 @@
 // FIXME: The "pathfinding" module doe not have proper typings.
-/* eslint-disable
-	@typescript-eslint/no-unsafe-call,
-	@typescript-eslint/no-unsafe-member-access,
-	@typescript-eslint/no-unsafe-assignment,
-	@typescript-eslint/ban-ts-comment,
-*/
+
 import type { XYPosition } from '@xyflow/react';
-import { AStarFinder, DiagonalMovement, JumpPointFinder, Util } from 'pathfinding';
-import type { Grid } from 'pathfinding';
+import { AStarFinder, DiagonalMovement, JumpPointFinder, Util, type Grid } from 'pathfinding';
 
 /**
  * Takes source and target {x, y} points, together with an grid representation
@@ -31,7 +25,9 @@ export const pathfindingAStarDiagonal: PathFindingFunction = (grid, start, end) 
     });
     const fullPath = finder.findPath(start.x, start.y, end.x, end.y, grid);
     const smoothedPath = Util.smoothenPath(grid, fullPath);
-    if (fullPath.length === 0 || smoothedPath.length === 0) return null;
+    if (fullPath.length === 0 || smoothedPath.length === 0) {
+      return null;
+    }
     return { fullPath, smoothedPath };
   } catch {
     return null;
@@ -45,7 +41,9 @@ export const pathfindingAStarNoDiagonal: PathFindingFunction = (grid, start, end
     });
     const fullPath = finder.findPath(start.x, start.y, end.x, end.y, grid);
     const smoothedPath = Util.smoothenPath(grid, fullPath);
-    if (fullPath.length === 0 || smoothedPath.length === 0) return null;
+    if (fullPath.length === 0 || smoothedPath.length === 0) {
+      return null;
+    }
     return { fullPath, smoothedPath };
   } catch {
     return null;
@@ -61,7 +59,9 @@ export const pathfindingJumpPointNoDiagonal: PathFindingFunction = (grid, start,
     });
     const fullPath = finder.findPath(start.x, start.y, end.x, end.y, grid);
     const smoothedPath = fullPath;
-    if (fullPath.length === 0 || smoothedPath.length === 0) return null;
+    if (fullPath.length === 0 || smoothedPath.length === 0) {
+      return null;
+    }
     return { fullPath, smoothedPath };
   } catch {
     return null;
