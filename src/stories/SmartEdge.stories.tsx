@@ -1,20 +1,8 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react';
 import type { ReactFlowProps } from '@xyflow/react';
-import { EdgeTypes } from '@xyflow/react';
-import { SmartBezierEdge } from '../SmartBezierEdge';
-import { SmartStepEdge } from '../SmartStepEdge';
-import { SmartStraightEdge } from '../SmartStraightEdge';
-import { SmartEdgeCustomLabel } from './CustomLabel';
-import { edgesBezier, edgesLabel, edgesStep, edgesStraight, nodes } from './DummyData';
+import { edgesBezier, edgesLabel, edgesStep, edgesStraight, edgeTypes, nodes } from './DummyData';
 import { GraphWrapper } from './GraphWrapper';
-
-const edgeTypes: EdgeTypes = {
-  smartBezier: SmartBezierEdge,
-  smartStraight: SmartStraightEdge,
-  smartStep: SmartStepEdge,
-  smartBezierLabel: (props) => <SmartEdgeCustomLabel {...props} />,
-};
 
 export default {
   title: 'Smart Edge',

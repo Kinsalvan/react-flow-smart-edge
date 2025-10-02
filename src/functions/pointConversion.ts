@@ -81,13 +81,13 @@ export const gridToGraphPoint = (
 
   if (referenceX < gridRatio) {
     while (referenceX !== gridRatio) {
-      referenceX = referenceX + gridRatio;
-      x = x - gridRatio;
+      referenceX += gridRatio;
+      x -= gridRatio;
     }
   } else if (referenceX > gridRatio) {
     while (referenceX !== gridRatio) {
-      referenceX = referenceX - gridRatio;
-      x = x + gridRatio;
+      referenceX -= gridRatio;
+      x += gridRatio;
     }
   } else {
     // Nothing to do
@@ -95,13 +95,13 @@ export const gridToGraphPoint = (
 
   if (referenceY < gridRatio) {
     while (referenceY !== gridRatio) {
-      referenceY = referenceY + gridRatio;
-      y = y - gridRatio;
+      referenceY += gridRatio;
+      y -= gridRatio;
     }
   } else if (referenceY > gridRatio) {
     while (referenceY !== gridRatio) {
-      referenceY = referenceY - gridRatio;
-      y = y + gridRatio;
+      referenceY -= gridRatio;
+      y += gridRatio;
     }
   } else {
     // Nothing to do

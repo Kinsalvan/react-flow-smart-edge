@@ -6,8 +6,10 @@ import {
   pathfindingAStarDiagonal,
   svgDrawSmoothLinePath,
   toInteger,
+  type PathFindingFunction,
+  type PointInfo,
+  type SVGDrawFunction,
 } from '../functions';
-import type { PathFindingFunction, PointInfo, SVGDrawFunction } from '../functions';
 
 export type EdgeParams = Pick<
   EdgeProps,
